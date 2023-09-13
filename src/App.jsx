@@ -9,7 +9,6 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-
           <Route path="/quote_machine" element={<Quote_machine />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
