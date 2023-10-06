@@ -37,13 +37,13 @@ export const Layout = () => {
             }}
           >
             <li>
-              <Link to={"/"} style={{ textDecoration: "none", color: "#fff" }}>
+              <Link to={"/freecodecamp_react"} style={{ textDecoration: "none", color: "#fff" }}>
                 Home
               </Link>
             </li>
             <li>
               <Link
-                to={"/quote_machine"}
+                to={"/freecodecamp_react/quote_machine"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 Quote Machine
@@ -51,7 +51,7 @@ export const Layout = () => {
             </li>
             <li>
               <Link
-                to={"/markdown_editor"}
+                to={"/freecodecamp_react/markdown_editor"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 Markdown Editor
@@ -59,7 +59,7 @@ export const Layout = () => {
             </li>
             <li>
               <Link
-                to={"/drum_machine"}
+                to={"/freecodecamp_react/drum_machine"}
                 style={{ textDecoration: "none", color: "#fff" }}
               >
                 Drum Machine

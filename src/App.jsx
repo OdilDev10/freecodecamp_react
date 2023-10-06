@@ -11,10 +11,10 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="/quote_machine" element={<Quote_machine />} />
-            <Route path="/markdown_editor" element={<MarkdownEditor />} />
-            <Route path="/drum_machine" element={<Drummachine />} />
+          <Route path="/freecodecamp_react" element={<Layout />}>
+            <Route path="quote_machine" element={<Quote_machine />} />
+            <Route path="markdown_editor" element={<MarkdownEditor />} />
+            <Route path="drum_machine" element={<Drummachine />} />
 
             <Route path="*" element={<Page404 />} />
           </Route>
