@@ -1,6 +1,62 @@
 import React from "react";
+import { useState } from "react";
 
 export const Drummachine = () => {
+  const [inputVolumen, setInputVolumen] = useState(0.37);
+  const [powerButton, setPowerButton] = useState(true);
+
+  const inputVolumenChange = (e) => {
+    setInputVolumen(e.target.value);
+  };
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "q" || event.key === "Q") {
+      let element = document.getElementById("Q");
+      element.volume = inputVolumen;
+      element.play();
+    }
+    if (event.key === "w" || event.key === "W") {
+      let element = document.getElementById("W");
+      element.volume = inputVolumen;
+      element.play();
+    }
+    if (event.key === "e" || event.key === "E") {
+      let element = document.getElementById("E");
+      element.volume = inputVolumen;
+      element.play();
+    }
+    if (event.key === "a" || event.key === "A") {
+      let element = document.getElementById("A");
+      element.volume = inputVolumen;
+      element.play();
+    }
+    if (event.key === "s" || event.key === "S") {
+      let element = document.getElementById("S");
+      element.volume = inputVolumen;
+      element.play();
+    }
+    if (event.key === "d" || event.key === "D") {
+      let element = document.getElementById("D");
+      element.volume = inputVolumen;
+      element.play();
+    }
+    if (event.key === "z" || event.key === "Z") {
+      let element = document.getElementById("Z");
+      element.volume = inputVolumen;
+      element.play();
+    }
+    if (event.key === "x" || event.key === "X") {
+      let element = document.getElementById("X");
+      element.volume = inputVolumen;
+      element.play();
+    }
+    if (event.key === "c" || event.key === "C") {
+      let element = document.getElementById("C");
+      element.volume = inputVolumen;
+      element.play();
+    }
+  });
+
   return (
     <div
       style={{
@@ -14,139 +70,143 @@ export const Drummachine = () => {
       }}
     >
       <div className="inner-container" id="drum-machine">
-        <div className="pad-bank">
+        <div
+          className="pad-bank"
+          style={{ display: "flex", justifyContent: "space-between" }}
+        >
           <div
-            className="drum-pad"
-            id="Heater-1"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: "300px",
+              gap: "20px",
+            }}
           >
-            <audio
-              className="clip"
-              id="Q"
-              src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"
-            ></audio>
-            Q
-          </div>
-          <div
-            className="drum-pad"
-            id="Heater-2"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
-          >
-            <audio
-              className="clip"
-              id="W"
-              src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"
-            ></audio>
-            W
-          </div>
-          <div
-            className="drum-pad"
-            id="Heater-3"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
-          >
-            <audio
-              className="clip"
-              id="E"
-              src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"
-            ></audio>
-            E
-          </div>
-          <div
-            className="drum-pad"
-            id="Heater-4"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
-          >
-            <audio
-              className="clip"
-              id="A"
-              src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"
-            ></audio>
-            A
-          </div>
-          <div
-            className="drum-pad"
-            id="Clap"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
-          >
-            <audio
-              className="clip"
-              id="S"
-              src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"
-            ></audio>
-            S
-          </div>
-          <div
-            className="drum-pad"
-            id="Open-HH"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
-          >
-            <audio
-              className="clip"
-              id="D"
-              src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"
-            ></audio>
-            D
-          </div>
-          <div
-            className="drum-pad"
-            id="Kick-n'-Hat"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
-          >
-            <audio
-              className="clip"
-              id="Z"
-              src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"
-            ></audio>
-            Z
-          </div>
-          <div
-            className="drum-pad"
-            id="Kick"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
-          >
-            <audio
-              className="clip"
-              id="X"
-              src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"
-            ></audio>
-            X
-          </div>
-          <div
-            className="drum-pad"
-            id="Closed-HH"
-            style="background-color: grey; margin-top: 10px; box-shadow: black 3px 3px 5px;"
-          >
-            <audio
-              className="clip"
-              id="C"
-              src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"
-            ></audio>
-            C
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"Q"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"}
+            />
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"W"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"}
+            />
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"E"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"}
+            />
+
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"A"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"}
+            />
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"S"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"}
+            />
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"D"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"}
+            />
+
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"Z"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"}
+            />
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"X"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"}
+            />
+            <ButtonLetter
+              powerButton={powerButton}
+              title={"C"}
+              inputVolumen={inputVolumen}
+              src={"https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"}
+            />
           </div>
         </div>
-        <div className="logo">
-          <div className="inner-logo ">FCC&nbsp;</div>
-          <i className="inner-logo fa fa-free-code-camp"></i>
-        </div>
-        <div className="controls-container">
-          <div className="control">
-            <p>Power</p>
-            <div className="select">
-              <div className="inner" style="float: right;"></div>
-            </div>
-          </div>
-          <p id="display">Clap</p>
-          <div className="volume-slider">
-            <input max="1" min="0" step="0.01" type="range" value="0.37" />
-          </div>
-          <div className="control">
-            <p>Bank</p>
-            <div className="select">
-              <div className="inner" style="float: left;"></div>
-            </div>
+
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <button
+            style={{
+              outline: "none",
+              fontSize: "18px",
+              padding: "20px",
+              border: "none",
+              borderRadius: "20px",
+              margin: "20px",
+              background: powerButton ? "red" : "green",
+              cursor: "pointer",
+            }}
+            onClick={() => {
+              setPowerButton(!powerButton);
+            }}
+          >
+            Power
+          </button>
+          <div>
+            <p id="display">Volumen</p>
+            <input
+              max="1"
+              onChange={inputVolumenChange}
+              min="0"
+              step="0.01"
+              type="range"
+              value={inputVolumen}
+            />
           </div>
         </div>
       </div>
+    </div>
+  );
+};
+
+const ButtonLetter = ({ inputVolumen, src, title, powerButton }) => {
+  return (
+    <div
+      className="drum-pad"
+      style={{
+        cursor: "pointer",
+        height: "80px",
+        width: "80px",
+        backgroundColor: "grey",
+        marginTop: "10px",
+        boxShadow: "3px 3px 5px black",
+        textAlign: "center",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "15px",
+      }}
+      onClick={(e) => {
+        if (powerButton == true) {
+          e.target.lastElementChild.volume = inputVolumen;
+          e.target.lastElementChild.play();
+        }
+      }}
+    >
+      <audio id={title} volume={0} className="clip" src={src}></audio>
+      {title}
     </div>
   );
 };
