@@ -5,6 +5,7 @@ import { Quote_machine } from "./pages/quote_machine";
 import MarkdownEditor from "./pages/page_markdown";
 import { Layout } from "./components/Layout";
 import { Drummachine } from "./pages/drum_machine";
+import { Calculator } from "./pages/Calculator";
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
             <Route path="quote_machine" element={<Quote_machine />} />
             <Route path="markdown_editor" element={<MarkdownEditor />} />
             <Route path="drum_machine" element={<Drummachine />} />
+            <Route path="calculator" element={<Calculator />} />
+
 
             <Route path="*" element={<Page404 />} />
           </Route>
